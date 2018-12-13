@@ -50,6 +50,13 @@ func (queue *Queue) Pop() interface{} {
 	return node.Value
 }
 
+func (queue *Queue) Empty() bool {
+	if queue.Size <= 0 {
+		return true
+	}
+	return false
+}
+
 func (queue *Queue) ForEach(process func(value interface{}) error) error {
 	tmp := queue.Head
 	for {

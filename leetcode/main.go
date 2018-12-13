@@ -6,5 +6,9 @@ func main() {
 	//FibonacciTest()
 	//MergeArray()
 	//Palindrome()
-	Rotate()
+	//Rotate()
+	//WiggleSort()
+	//SingleNumber()
+
+	OrderParseTest()
 }
