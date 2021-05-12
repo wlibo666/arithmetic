@@ -1,6 +1,6 @@
-package main
+package leetcode
 
-import "golangsrc/fmt"
+import "fmt"
 
 /*
 给定2个排序好的整数数组nums1和nums2，把nums2合并到nums1中成为1个排序的数组。

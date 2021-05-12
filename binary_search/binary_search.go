@@ -1,18 +1,14 @@
-package binary_search
+// Package binarysearch 主要实现二分查找相关算法
+package binarysearch
 
+// BinarySearch 二分查找
 func BinarySearch(data []int, elem int) (index int) {
 	low := 0
 	high := len(data) - 1
 	mid := 0
 
-	for {
-		// 先找中间值
-		if low <= high {
-			mid = (low + high) / 2
-		} else {
-			break
-		}
-
+	for low <= high {
+		mid = (low + high) >> 1
 		if data[mid] == elem {
 			return mid
 		} else if data[mid] > elem {

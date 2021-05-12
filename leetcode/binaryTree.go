@@ -1,8 +1,9 @@
-package main
+package leetcode
 
 import (
 	"fmt"
-	"github.com/wlibo666/arithmetic/queue"
+
+	"../queue"
 )
 
 /*
@@ -22,6 +23,8 @@ import (
 我们都知道，队列是一种先进先出的数据结构，我们可以先将整颗二叉树的根节点加入队尾，然后循环出队，
 每次读取对头元素输出并且将队头元素出队，然后将这个输出的元素节点的的左右子树分别依次加入队尾，重复这个循环，
 知道队列为空的时候结束输出。那么整个二叉树就被我们采用层序遍历的思想输出来了
+
+二叉搜索树 左节点的值小于父节点，父节点值小于右节点
 
 */
 type TreeNode struct {
@@ -57,6 +60,7 @@ func PastOrderParse(root *TreeNode) {
 	fmt.Printf("node value:%d\n", root.Val)
 }
 
+// 层序遍历
 func SequenceParse(root *TreeNode) {
 	queue := queue.Init()
 	if root == nil {
@@ -78,6 +82,7 @@ func SequenceParse(root *TreeNode) {
 	}
 }
 
+// 层序 从右侧开始打印
 func SequenceRightParse(root *TreeNode) {
 	queue := queue.Init()
 	if root == nil {
@@ -96,6 +101,19 @@ func SequenceRightParse(root *TreeNode) {
 			queue.Put(tmpV.Left)
 		}
 	}
+}
+
+//
+func HasPathSum(node *TreeNode, sum int) bool {
+	if node == nil {
+		return false
+	}
+	if node.Left == nil && node.Right == nil && node.Val == sum {
+		fmt.Printf("found end node:%d\n", node.Val)
+		return true
+	}
+	var left = sum - node.Val
+	return HasPathSum(node.Left, left) || HasPathSum(node.Right, left)
 }
 
 func OrderParseTest() {
@@ -128,4 +146,6 @@ func OrderParseTest() {
 
 	fmt.Printf("SequenceRightParse\n")
 	SequenceRightParse(node0)
+
+	HasPathSum(node0, 5)
 }

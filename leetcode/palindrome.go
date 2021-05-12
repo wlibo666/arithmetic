@@ -1,7 +1,7 @@
-package main
+package leetcode
 
 import (
-	"golangsrc/fmt"
+	"fmt"
 	"strings"
 )
 

@@ -3,7 +3,7 @@ package breadth_first_search
 import (
 	"fmt"
 
-	"github.com/wlibo666/arithmetic/queue"
+	"../queue"
 )
 
 type GraphNode struct {

@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 import "fmt"
 
@@ -18,14 +18,15 @@ n=4，s=5。
 
 */
 
-func fibonacci(n int) int64 {
+// Fibonacci xxx
+func Fibonacci(n int) int64 {
 	if n == 1 || n == 2 {
 		return int64(n)
 	}
-	return fibonacci(n-2) + fibonacci(n-1)
+	return Fibonacci(n-2) + Fibonacci(n-1)
 }
 
-func FibonacciTest() {
-	fmt.Printf("4!=%d\n", fibonacci(4))
-	fmt.Printf("10!=%d\n", fibonacci(10))
+func Testfibonacci() {
+	fmt.Printf("4!=%d\n", Fibonacci(4))
+	fmt.Printf("10!=%d\n", Fibonacci(10))
 }
